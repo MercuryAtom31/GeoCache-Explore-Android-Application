@@ -1,1 +1,31 @@
-C
+Project Checkpoint 01
+Team Name: GeoCache Explorer
+
+Team Members:  
+Hristo Ivanov: Student Number:2232237 Email: 2232237@champlaincollege.qc.ca
+Valentine Nneji: Student Number: 2132306 Email: 2132306@champlaincollege.qc.ca
+Hichem Benzaïr: Student Number: 20 30 491 Email: hbenzair@stu.champlaincollege.qc.ca
+GitHub:
+
+Project Description:
+GeoCache Explorer is an Android application for geocaching aficionados. It will allow users to efficiently explore, create, and manage geocaches. We are confident that the incorporation of CRUD operations, along with interactive map display of geocaches, will enhance the overall user experience.
+
+Plan: 
+
+Based on the course outline and the college calendar for winter 2024. The project needs to be published in Google store during the week of 29th of April (8 weeks after the reading week). 
+
+Which means, as of this week, we have 12 weeks in total. I didn’t count the last week, in which we’ll have the project presentation.
+WE HAVE TWELVE WEEKS LEFT IN THIS SEMESTER. WHAT ABOUT WE CREATE A FUNCTIONALITY EVERY TWO WEEKS. FOR EXAMPLE, THESE UPCOMING TWO WEEKS, WE ARE GOING TO CREATE THE HTTP POST GEOCACHE COMMAND. THEN THE NEXT TWO WEEKS, WE CREATE THE GET-ALL AND GET BY ID. SO ON… 
+
+POST (For 2 weeks)
+GET ALL and GET by ID (2 weeks)
+PUT (2 weeks)
+DELETE (2 weeks)
+Displaying caches on map. (2 weeks)
+Testing and finalizing project. (2 weeks)
+
+Checkpoint 2 is in 5 weeks, this week and the week of the 11th of March inclusive. Therefore, the plan is to have the following functionalities ready for the first sprint of the project (Checkpoint2): 
+Both GET commands, the POST command, as well the half-completed PUT command.
+
+
+
