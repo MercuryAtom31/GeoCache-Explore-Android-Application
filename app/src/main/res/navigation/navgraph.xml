@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/landingPage">
+
+    <fragment
+        android:id="@+id/landingPage"
+        android:name="com.example.geocacheexploreandroidapplication.LandingPage"
+        android:label="fragment_landing_page"
+        tools:layout="@layout/fragment_landing_page" >
+        <action
+            android:id="@+id/action_landingPage_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_landingPage_to_cacheList"
+            app:destination="@id/cacheList" />
+    </fragment>
+    <fragment
+        android:id="@+id/cacheList"
+        android:name="com.example.geocacheexploreandroidapplication.CacheList"
+        android:label="fragment_cache_list"
+        tools:layout="@layout/fragment_cache_list" >
+        <action
+            android:id="@+id/action_cacheList_to_cacheDetails"
+            app:destination="@id/cacheDetails" />
+        <action
+            android:id="@+id/action_cacheList_to_cacheEdit"
+            app:destination="@id/cacheEdit" />
+    </fragment>
+    <fragment
+        android:id="@+id/cacheDetails"
+        android:name="com.example.geocacheexploreandroidapplication.CacheDetails"
+        android:label="fragment_cache_details"
+        tools:layout="@layout/fragment_cache_details" >
+        <action
+            android:id="@+id/action_cacheDetails_to_cacheEdit"
+            app:destination="@id/cacheEdit" />
+        <action
+            android:id="@+id/action_cacheDetails_to_landingPage"
+            app:destination="@id/landingPage" />
+        <action
+            android:id="@+id/action_cacheDetails_to_cacheList2"
+            app:destination="@id/cacheList" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.geocacheexploreandroidapplication.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mapFragment_to_cacheDetails"
+            app:destination="@id/cacheDetails" />
+        <action
+            android:id="@+id/action_mapFragment_to_landingPage"
+            app:destination="@id/landingPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/cacheEdit"
+        android:name="com.example.geocacheexploreandroidapplication.CacheEdit"
+        android:label="fragment_cache_edit"
+        tools:layout="@layout/fragment_cache_edit" >
+        <action
+            android:id="@+id/action_cacheEdit_to_cacheDetails"
+            app:destination="@id/cacheDetails" />
+        <action
+            android:id="@+id/action_cacheEdit_to_cacheList"
+            app:destination="@id/cacheList" />
+    </fragment>
+</navigation>
