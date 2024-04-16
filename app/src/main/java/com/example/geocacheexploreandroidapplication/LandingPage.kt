@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.FrameLayout
 
 import androidx.navigation.fragment.findNavController
 
@@ -26,26 +27,50 @@ class LandingPage : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_landing_page, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val buttonMap = view.findViewById<Button>(R.id.button_map)
-        val buttonList = view.findViewById<Button>(R.id.button_list)
+        // Find the FrameLayout containers
+        val frameCacheList = view.findViewById<FrameLayout>(R.id.frame_cache_list)
+        val frameMapView = view.findViewById<FrameLayout>(R.id.frame_map_view)
 
-        buttonMap.setOnClickListener {
-            // Navigate to MapFragment
-            findNavController().navigate(R.id.action_landingPage_to_mapFragment)
-        }
-
-        buttonList.setOnClickListener {
+        // Set click listeners on the FrameLayout containers
+        frameCacheList.setOnClickListener {
             // Navigate to CacheListFragment
             findNavController().navigate(R.id.action_landingPage_to_cacheList)
         }
+        frameMapView.setOnClickListener {
+            // Navigate to MapFragment
+            findNavController().navigate(R.id.action_landingPage_to_mapFragment)
+        }
     }
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.fragment_landing_page, container, false)
+//    }
+//
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//
+//        val buttonMap = view.findViewById<Button>(R.id.button_map)
+//        val buttonList = view.findViewById<Button>(R.id.button_list)
+//
+//        buttonMap.setOnClickListener {
+//            // Navigate to MapFragment
+//            findNavController().navigate(R.id.action_landingPage_to_mapFragment)
+//        }
+//
+//        buttonList.setOnClickListener {
+//            // Navigate to CacheListFragment
+//            findNavController().navigate(R.id.action_landingPage_to_cacheList)
+//        }
+//    }
 
 
 //    ************************************************************************
