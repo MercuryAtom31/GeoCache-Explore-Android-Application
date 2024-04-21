@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp">
+
+    <EditText
+        android:id="@+id/editTextCacheName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cache Name" />
+
+    <EditText
+        android:id="@+id/editTextCacheDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cache Description" />
+
+    <!-- You can add more fields for other details such as location coordinates -->
+
+</LinearLayout>

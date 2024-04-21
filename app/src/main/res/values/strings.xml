@@ -7,5 +7,6 @@
     <string name="view_caches_list">View Caches List</string>
     <string name="discover_caches_in_map">Discover Caches in Map</string>
     <string name="logo_description">Geocaching Explore Application Logo</string>
+    <string name="add_geocache">Add New Geocache</string>
     <!-- ... other string resources ... -->
 </resources>
