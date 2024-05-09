@@ -68,4 +68,8 @@
             android:id="@+id/action_cacheEdit_to_cacheList"
             app:destination="@id/cacheList" />
     </fragment>
+    <fragment
+        android:id="@+id/cacheListFragment"
+        android:name="com.example.geocacheexploreandroidapplication.CacheListFragment"
+        android:label="CacheListFragment" />
 </navigation>
