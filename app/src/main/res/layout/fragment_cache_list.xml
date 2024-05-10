@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CacheList">
+    tools:context=".CacheListFragment">
+<!--    tools:context=".CacheList">-->
 
     <!-- RecyclerView to display the list of caches -->
     <androidx.recyclerview.widget.RecyclerView

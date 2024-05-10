@@ -6,6 +6,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+/**
+ * CacheListAdapter
+ * Purpose: Manages the individual data items (Geocache objects)
+ * and binds them to the views defined in the list item layout (R.layout.fragment_cache_item).
+ * This class handles the display of data in the RecyclerView.
+ */
+
 class CacheListAdapter(private val caches: MutableList<Geocache>) : RecyclerView.Adapter<CacheListAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

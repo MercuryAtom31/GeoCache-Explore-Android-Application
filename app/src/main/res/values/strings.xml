@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">GeoCacheExploreAndroidApplication</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="welcome_message">Geocaching Explore</string>
-    <!-- ... other string resources ... -->
     <string name="view_caches_list">View Caches List</string>
     <string name="discover_caches_in_map">Discover Caches in Map</string>
     <string name="logo_description">Geocaching Explore Application Logo</string>
     <string name="add_geocache">Add New Geocache</string>
-    <!-- ... other string resources ... -->
+    <string name="cache_name">Cache Name</string>
+    <string name="cache_description">Cache Description</string>
+    <string name="cache_location">Cache Location</string>
 </resources>

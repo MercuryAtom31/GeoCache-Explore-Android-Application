@@ -40,7 +40,7 @@ class LandingPage : Fragment() {
         // Set click listeners on the FrameLayout containers
         frameCacheList.setOnClickListener {
             // Navigate to CacheListFragment
-            findNavController().navigate(R.id.action_landingPage_to_cacheList)
+            findNavController().navigate(R.id.action_landingPage_to_cacheListFragment)
         }
         frameMapView.setOnClickListener {
             // Navigate to MapFragment

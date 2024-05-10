@@ -8,14 +8,24 @@
         android:id="@+id/editTextCacheName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Cache Name" />
+        android:hint="@string/cache_name"
+        android:autofillHints="Add Geocache Name"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/editTextCacheDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Cache Description" />
+        android:hint="@string/cache_description"
+        android:autofillHints="Location Could be an Address"
+        android:inputType="text" />
 
-    <!-- You can add more fields for other details such as location coordinates -->
+    <!-- Field for location coordinates? -->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextCacheLocation"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="@string/cache_location" />-->
 
 </LinearLayout>
