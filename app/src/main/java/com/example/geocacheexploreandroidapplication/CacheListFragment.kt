@@ -31,6 +31,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+import com.example.geocacheexploreandroidapplication.CacheListFragmentDirections
+
+
 class CacheListFragment : Fragment(), AddCacheDialogFragment.AddCacheDialogListener {
     private lateinit var recyclerView: RecyclerView
     private val cacheList = mutableListOf<Geocache>()
@@ -45,7 +48,12 @@ class CacheListFragment : Fragment(), AddCacheDialogFragment.AddCacheDialogListe
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        adapter = CacheListAdapter(cacheList)
+//        adapter = CacheListAdapter(cacheList)
+        adapter = CacheListAdapter(cacheList) { geocache ->
+//            val action = CacheListFragmentDirections.actionCacheListFragmentToCacheDetailsFragment(geocache.id)
+            val action = CacheListFragmentDirections.actionCacheListFragmentToCacheDetails()
+            findNavController().navigate(action)
+        }
         recyclerView.adapter = adapter
 
         addButton = view.findViewById<Button>(R.id.button_add_cache)
