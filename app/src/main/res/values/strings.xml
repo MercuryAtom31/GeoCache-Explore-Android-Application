@@ -9,4 +9,5 @@
     <string name="cache_name">Cache Name</string>
     <string name="cache_description">Cache Description</string>
     <string name="cache_location">Cache Location</string>
+    <string name="back_to_landing_page">Home</string>
 </resources>

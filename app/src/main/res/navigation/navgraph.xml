@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_cacheListFragment_to_cacheEdit"
             app:destination="@id/cacheEdit" />
+        <action
+            android:id="@+id/action_cacheListFragment_to_landingPage"
+            app:destination="@id/landingPage" />
     </fragment>
 
     <fragment

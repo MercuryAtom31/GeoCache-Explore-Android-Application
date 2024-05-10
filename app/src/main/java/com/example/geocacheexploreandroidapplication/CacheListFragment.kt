@@ -27,6 +27,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -50,6 +51,10 @@ class CacheListFragment : Fragment(), AddCacheDialogFragment.AddCacheDialogListe
         addButton = view.findViewById<Button>(R.id.button_add_cache)
         addButton.setOnClickListener {
             showAddCacheDialog()
+        }
+        // Button to navigate back to the LandingPage
+        view.findViewById<Button>(R.id.button_back_to_landing).setOnClickListener {
+            findNavController().navigate(R.id.action_cacheListFragment_to_landingPage)
         }
     }
 

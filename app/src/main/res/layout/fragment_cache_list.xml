@@ -17,15 +17,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Button to go back to the landing page -->
+    <Button
+        android:id="@+id/button_back_to_landing"
+        android:layout_width="140dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/back_to_landing_page"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <!-- Button to add a new geocache -->
     <Button
         android:id="@+id/button_add_cache"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_geocache"
         android:layout_margin="16dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/add_geocache"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
