@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
     id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-android")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -58,12 +60,12 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
     // Feature module Support
-    implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
-
-    // Testing Navigation
-    androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
-
-    // Jetpack Compose Integration
-    implementation("androidx.navigation:navigation-compose:$nav_version")
+//    implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
+//
+//    // Testing Navigation
+//    androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
+//
+//    // Jetpack Compose Integration
+//    implementation("androidx.navigation:navigation-compose:$nav_version")
 }
 //}

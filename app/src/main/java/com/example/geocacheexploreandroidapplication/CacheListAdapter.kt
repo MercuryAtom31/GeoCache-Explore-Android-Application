@@ -15,25 +15,28 @@ import androidx.recyclerview.widget.RecyclerView
 
 class CacheListAdapter(
     private val caches: MutableList<Geocache>,
-    private val onClick: (Int) -> Unit  // Accept a lambda that receives an Int (position)
+    private val onClick: (Geocache) -> Unit  // Accept a lambda that receives a Geocache object
 ) : RecyclerView.Adapter<CacheListAdapter.ViewHolder>() {
 
-    class ViewHolder(view: View, val onClick: (Int) -> Unit) : RecyclerView.ViewHolder(view) {
+    // Pass 'caches' along with 'onClick' to the ViewHolder
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val nameTextView: TextView = view.findViewById(R.id.editTextCacheName)
         val descriptionTextView: TextView = view.findViewById(R.id.editTextCacheDescription)
 
         init {
             view.setOnClickListener {
                 // Use the 'adapterPosition' to get the current item and trigger the click
-                onClick(adapterPosition)
+                if (adapterPosition != RecyclerView.NO_POSITION) {
+                    val selectedCache = caches[adapterPosition]  // Access to 'caches' directly
+                    onClick(selectedCache)
+                }
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        //val view = LayoutInflater.from(parent.context).inflate(R.layout.cache_item, parent, false)
         val view = LayoutInflater.from(parent.context).inflate(R.layout.fragment_cache_item, parent, false)
-        return ViewHolder(view, onClick)
+        return ViewHolder(view)  // No need to pass 'caches' or 'onClick' here, as it's accessible
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -49,3 +52,4 @@ class CacheListAdapter(
         notifyItemInserted(caches.size - 1)
     }
 }
+

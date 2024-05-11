@@ -7,6 +7,11 @@ import androidx.fragment.app.DialogFragment
 import com.example.geocacheexploreandroidapplication.Geocache
 import com.example.geocacheexploreandroidapplication.R
 
+/**
+ *  This class is designed to show a dialog where a user can input details
+ *  for a new Geocache, and then it communicates the result back to a listener.
+ */
+
 class AddCacheDialogFragment : DialogFragment() {
 
     interface AddCacheDialogListener {
@@ -20,7 +25,6 @@ class AddCacheDialogFragment : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             val builder = AlertDialog.Builder(it)
-
             // Get the layout inflater
             val inflater = requireActivity().layoutInflater;
             val view = inflater.inflate(R.layout.add_cache_dialog, null)
@@ -43,7 +47,6 @@ class AddCacheDialogFragment : DialogFragment() {
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
     }
-
     // Override the Fragment.onAttach() method to instantiate the AddCacheDialogListener
     override fun onAttach(context: Context) {
         super.onAttach(context)
