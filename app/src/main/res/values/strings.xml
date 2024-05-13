@@ -10,4 +10,5 @@
     <string name="cache_description">Cache Description</string>
     <string name="cache_location">Cache Location</string>
     <string name="back_to_landing_page">Home</string>
+    <string name="address_hint">Address</string>
 </resources>

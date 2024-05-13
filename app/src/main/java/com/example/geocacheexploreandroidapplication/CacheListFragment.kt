@@ -1,6 +1,6 @@
 package com.example.geocacheexploreandroidapplication
 
-import AddCacheDialogFragment
+import com.example.geocacheexploreandroidapplication.AddCacheDialogFragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -54,7 +54,7 @@ class CacheListFragment : Fragment(), AddCacheDialogFragment.AddCacheDialogListe
     private fun showAddCacheDialog() {
         val dialog = AddCacheDialogFragment()
         dialog.setTargetFragment(this, 0)
-        dialog.show(parentFragmentManager, "AddCacheDialogFragment")
+        dialog.show(parentFragmentManager, "com.example.geocacheexploreandroidapplication.AddCacheDialogFragment")
     }
 
     override fun onDialogPositiveClick(cache: Geocache) {

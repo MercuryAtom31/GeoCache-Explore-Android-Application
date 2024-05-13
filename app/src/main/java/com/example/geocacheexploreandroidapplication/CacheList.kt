@@ -1,6 +1,6 @@
 //package com.example.geocacheexploreandroidapplication
 //
-//import AddCacheDialogFragment
+//import com.example.geocacheexploreandroidapplication.AddCacheDialogFragment
 //import android.os.Bundle
 //import androidx.fragment.app.Fragment
 //import android.view.LayoutInflater
@@ -18,7 +18,7 @@
 // * Use the [CacheList.newInstance] factory method to
 // * create an instance of this fragment.
 // */
-//class CacheList : Fragment(), AddCacheDialogFragment.AddCacheDialogListener{
+//class CacheList : Fragment(), com.example.geocacheexploreandroidapplication.AddCacheDialogFragment.AddCacheDialogListener{
 //    // TODO: Rename and change types of parameters
 //    private var param1: String? = null
 //    private var param2: String? = null
@@ -70,10 +70,10 @@
 //
 //    // Function to show the Add Cache Dialog
 //    private fun showAddCacheDialog() {
-//        val dialog = AddCacheDialogFragment()
+//        val dialog = com.example.geocacheexploreandroidapplication.AddCacheDialogFragment()
 //        // Set the target fragment for use later when sending results
 //        dialog.setTargetFragment(this, 0)
-//        dialog.show(parentFragmentManager, "AddCacheDialogFragment")
+//        dialog.show(parentFragmentManager, "com.example.geocacheexploreandroidapplication.AddCacheDialogFragment")
 //    }
 //
 //    // Dialog positive click listener

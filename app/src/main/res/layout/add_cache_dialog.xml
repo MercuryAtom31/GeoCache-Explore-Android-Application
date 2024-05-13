@@ -20,12 +20,13 @@
         android:autofillHints="Location Could be an Address"
         android:inputType="text" />
 
-    <!-- Field for location coordinates? -->
+    <!-- Field for location -->
 
-<!--    <EditText-->
-<!--        android:id="@+id/editTextCacheLocation"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:hint="@string/cache_location" />-->
+    <EditText
+        android:id="@+id/editTextCacheAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/address_hint"
+        android:inputType="textPostalAddress" />
 
 </LinearLayout>

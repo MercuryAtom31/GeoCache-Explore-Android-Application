@@ -1,11 +1,12 @@
+package com.example.geocacheexploreandroidapplication
+
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.widget.EditText
 import androidx.fragment.app.DialogFragment
-import com.example.geocacheexploreandroidapplication.Geocache
-import com.example.geocacheexploreandroidapplication.R
+import java.util.UUID
 
 /**
  *  This class is designed to show a dialog where a user can input details
@@ -37,8 +38,9 @@ class AddCacheDialogFragment : DialogFragment() {
                     val name = view.findViewById<EditText>(R.id.editTextCacheName).text.toString()
                     val description =
                         view.findViewById<EditText>(R.id.editTextCacheDescription).text.toString()
+                    val address = view.findViewById<EditText>(R.id.editTextCacheAddress).text.toString()
                     // Create a new Geocache and pass back to listener
-                    listener.onDialogPositiveClick(Geocache(name, description))
+                    listener.onDialogPositiveClick(Geocache(id, name, description, address))
                 }
                 .setNegativeButton("Cancel") { dialog, id ->
                     listener.onDialogNegativeClick()

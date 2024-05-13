@@ -6,8 +6,8 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Geocache(
-    //val id: String,
+    val id: Int? = null,
     val name: String,
-    val description: String
-//    val location: String
+    val description: String,
+    val address: String
 ) : Parcelable
