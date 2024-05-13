@@ -47,9 +47,16 @@ class CacheListAdapter(
 
     override fun getItemCount() = caches.size
 
-    fun addCache(cache: Geocache) {
-        caches.add(cache)
-        notifyItemInserted(caches.size - 1)
+    //Handles the addition of caches.
+//    fun addCache(cache: Geocache) {
+//        caches.add(cache)
+//        notifyItemInserted(caches.size - 1)
+//    }
+
+    fun updateData(newCaches: List<Geocache>) {
+        caches.clear()
+        caches.addAll(newCaches)
+        notifyDataSetChanged()
     }
 }
 
