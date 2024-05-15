@@ -67,9 +67,12 @@
 
     <fragment
         android:id="@+id/cacheEdit"
-        android:name="com.example.geocacheexploreandroidapplication.CacheEdit"
+        android:name="com.example.geocacheexploreandroidapplication.CacheEditFragment"
         android:label="fragment_cache_edit"
         tools:layout="@layout/fragment_cache_edit" >
+        <argument
+            android:name="geocache"
+            app:argType="com.example.geocacheexploreandroidapplication.Geocache" />
         <action
             android:id="@+id/action_cacheEdit_to_cacheDetails"
             app:destination="@id/cacheDetails" />

@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.geocacheexploreandroidapplication.CacheDetailsArgs
 
@@ -27,5 +29,10 @@ class CacheDetails : Fragment() {
             Description: ${args.geocache.description}
             Address: ${args.geocache.address}
         """.trimIndent()
+
+        view.findViewById<Button>(R.id.button_edit_cache).setOnClickListener {
+            val action = CacheDetailsDirections.actionCacheDetailsToCacheEdit(args.geocache)
+            findNavController().navigate(action)
+        }
     }
 }

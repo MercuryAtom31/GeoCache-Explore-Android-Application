@@ -11,4 +11,9 @@
     <string name="cache_location">Cache Location</string>
     <string name="back_to_landing_page">Home</string>
     <string name="address_hint">Address</string>
+    <string name="edit">Edit</string>
+    <string name="name">Name</string>
+    <string name="description">Description</string>
+    <string name="address">Address</string>
+    <string name="save">Save</string>
 </resources>

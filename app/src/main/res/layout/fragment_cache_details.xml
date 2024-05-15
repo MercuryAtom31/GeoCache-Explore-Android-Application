@@ -12,4 +12,11 @@
         android:padding="16dp"
         android:layout_gravity="center" />
 
+    <Button
+        android:id="@+id/button_edit_cache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="16dp" />
 </FrameLayout>
