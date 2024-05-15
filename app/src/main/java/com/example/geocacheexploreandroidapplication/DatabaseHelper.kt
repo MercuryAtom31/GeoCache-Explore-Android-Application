@@ -63,10 +63,14 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
             do {
                 val geocache = Geocache(
-                    id = if (idIndex != -1) cursor.getInt(idIndex) else null,
-                    name = if (nameIndex != -1) cursor.getString(nameIndex) else "",
-                    description = if (descriptionIndex != -1) cursor.getString(descriptionIndex) else "",
-                    address = if (addressIndex != -1) cursor.getString(addressIndex) else ""
+                    id = cursor.getInt(idIndex),
+                    name = cursor.getString(nameIndex) ?: "",
+                    description = cursor.getString(descriptionIndex) ?: "",
+                    address = cursor.getString(addressIndex) ?: ""
+//                    id = if (idIndex != -1) cursor.getInt(idIndex) else null,
+//                    name = if (nameIndex != -1) cursor.getString(nameIndex) else "",
+//                    description = if (descriptionIndex != -1) cursor.getString(descriptionIndex) else "",
+//                    address = if (addressIndex != -1) cursor.getString(addressIndex) else ""
                 )
                 geocaches.add(geocache)
             } while (cursor.moveToNext())
@@ -87,6 +91,13 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         db.update(TABLE_GEOCACHE, values, "$KEY_ID = ?", arrayOf(geocache.id.toString()))
         db.close()
     }
+
+    fun deleteGeocache(geocacheId: Int) {
+        val db = this.writableDatabase
+        db.delete(TABLE_GEOCACHE, "$KEY_ID = ?", arrayOf(geocacheId.toString()))
+        db.close()
+    }
+
 }
 
 
