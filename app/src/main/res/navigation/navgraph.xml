@@ -50,6 +50,9 @@
         <action
             android:id="@+id/action_cacheDetails_to_cacheListFragment"
             app:destination="@id/cacheListFragment" />
+        <action
+            android:id="@+id/action_cacheDetails_to_mapFragment"
+            app:destination="@id/mapFragment" />
     </fragment>
 
     <fragment
@@ -57,6 +60,9 @@
         android:name="com.example.geocacheexploreandroidapplication.MapFragment"
         android:label="fragment_map"
         tools:layout="@layout/fragment_map" >
+        <argument
+            android:name="geocache"
+            app:argType="com.example.geocacheexploreandroidapplication.Geocache" />
         <action
             android:id="@+id/action_mapFragment_to_cacheDetails"
             app:destination="@id/cacheDetails" />

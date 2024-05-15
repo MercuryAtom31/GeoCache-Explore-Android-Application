@@ -39,5 +39,10 @@ class CacheDetails : Fragment() {
         backButton.setOnClickListener {
             findNavController().navigate(R.id.action_cacheDetails_to_cacheListFragment)
         }
+
+        view.findViewById<Button>(R.id.button_view_on_map).setOnClickListener {
+            val action = CacheDetailsDirections.actionCacheDetailsToMapFragment(args.geocache)
+            findNavController().navigate(action)
+        }
     }
 }
