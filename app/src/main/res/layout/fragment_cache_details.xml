@@ -1,45 +1,68 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".CacheDetails">
 
+    <!-- TextView for displaying geocache details -->
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:padding="16dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center_horizontal" />
 
+    <!-- Map Fragment -->
+    <fragment
+        android:id="@+id/mapView"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- View on Map Button -->
+    <Button
+        android:id="@+id/button_view_on_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/view_on_map"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Edit and Back to List Buttons Container -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
         android:orientation="horizontal"
-        android:padding="16dp"
-        android:gravity="center_horizontal">
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
 
+        <!-- Edit Button -->
         <Button
             android:id="@+id/button_edit_cache"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/edit"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp" />
 
+        <!-- Back to List Button -->
         <Button
             android:id="@+id/button_back_to_list"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/back_to_list"
-            android:layout_marginStart="8dp" />
-
-        <Button
-            android:id="@+id/button_view_on_map"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/view_on_map" />
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp" />
 
     </LinearLayout>
 
-</FrameLayout>
+</LinearLayout>

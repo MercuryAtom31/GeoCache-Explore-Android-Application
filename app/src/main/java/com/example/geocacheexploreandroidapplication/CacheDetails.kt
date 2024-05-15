@@ -1,5 +1,6 @@
 package com.example.geocacheexploreandroidapplication
 
+import android.location.Geocoder
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,9 +11,17 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.geocacheexploreandroidapplication.CacheDetailsArgs
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
+import java.io.IOException
 
-class CacheDetails : Fragment() {
+class CacheDetails : Fragment(), OnMapReadyCallback {
     private val args: CacheDetailsArgs by navArgs()
+    private lateinit var mMap: GoogleMap
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,6 +52,37 @@ class CacheDetails : Fragment() {
         view.findViewById<Button>(R.id.button_view_on_map).setOnClickListener {
             val action = CacheDetailsDirections.actionCacheDetailsToMapFragment(args.geocache)
             findNavController().navigate(action)
+        }
+
+        val mapFragment = childFragmentManager.findFragmentById(R.id.mapView) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+
+        mapFragment.view?.setOnClickListener {
+            val action = CacheDetailsDirections.actionCacheDetailsToMapFragment(args.geocache)
+            findNavController().navigate(action)
+        }
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+
+        val geocache = args.geocache
+        val address = geocache.address
+        val geocoder = Geocoder(requireContext())
+
+        try {
+            val addresses = geocoder.getFromLocationName(address, 1)
+            if (addresses != null && addresses.isNotEmpty()) {
+                val location = addresses[0]
+                val latLng = LatLng(location.latitude, location.longitude)
+                mMap.addMarker(MarkerOptions().position(latLng).title(geocache.name))
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
+            } else {
+                // *****
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+            // *****
         }
     }
 }
