@@ -18,4 +18,5 @@
     <string name="save">Save</string>
     <string name="delete">Delete</string>
     <string name="back_to_list">Back to List</string>
+    <string name="back_to_details">Back to Details</string>
 </resources>

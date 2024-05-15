@@ -28,6 +28,7 @@ class CacheEditFragment : Fragment() {
         val addressEditText = view.findViewById<EditText>(R.id.editTextCacheAddress)
         val saveButton = view.findViewById<Button>(R.id.button_save_cache)
         val deleteButton = view.findViewById<Button>(R.id.button_delete_cache)
+        val backButton = view.findViewById<Button>(R.id.button_back_to_details)
 
         val geocache = args.geocache
         nameEditText.setText(geocache.name)
@@ -52,6 +53,11 @@ class CacheEditFragment : Fragment() {
 
         deleteButton.setOnClickListener {
             showDeleteConfirmationDialog(geocache.id)
+        }
+
+        backButton.setOnClickListener {
+            val action = CacheEditFragmentDirections.actionCacheEditToCacheDetails(geocache)
+            findNavController().navigate(action)
         }
     }
 
