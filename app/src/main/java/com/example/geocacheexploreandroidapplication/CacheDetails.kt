@@ -22,6 +22,10 @@ class CacheDetails : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val textView = view.findViewById<TextView>(R.id.textView)
-        textView.text = "Name: ${args.geocache.name}\nDescription: ${args.geocache.description}"
+        textView.text = """
+            Name: ${args.geocache.name}
+            Description: ${args.geocache.description}
+            Address: ${args.geocache.address}
+        """.trimIndent()
     }
 }
