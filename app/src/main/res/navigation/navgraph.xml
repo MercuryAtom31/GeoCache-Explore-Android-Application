@@ -32,7 +32,7 @@
             android:id="@+id/action_cacheListFragment_to_landingPage"
             app:destination="@id/landingPage" />
     </fragment>
-<!--    android:name="geocache" on line 42-->
+
     <fragment
         android:id="@+id/cacheDetails"
         android:name="com.example.geocacheexploreandroidapplication.CacheDetails"
@@ -52,7 +52,12 @@
             app:destination="@id/cacheListFragment" />
         <action
             android:id="@+id/action_cacheDetails_to_mapFragment"
-            app:destination="@id/mapFragment" />
+            app:destination="@id/mapFragment" >
+            <argument
+                android:name="geocaches"
+                app:argType="com.example.geocacheexploreandroidapplication.Geocache[]"
+                app:nullable="false" />
+        </action>
     </fragment>
 
     <fragment
@@ -61,8 +66,9 @@
         android:label="fragment_map"
         tools:layout="@layout/fragment_map" >
         <argument
-            android:name="geocache"
-            app:argType="com.example.geocacheexploreandroidapplication.Geocache" />
+            android:name="geocaches"
+            app:argType="com.example.geocacheexploreandroidapplication.Geocache[]"
+            app:nullable="false" />
         <action
             android:id="@+id/action_mapFragment_to_cacheDetails"
             app:destination="@id/cacheDetails" />

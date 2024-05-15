@@ -50,7 +50,10 @@ class CacheDetails : Fragment(), OnMapReadyCallback {
         }
 
         view.findViewById<Button>(R.id.button_view_on_map).setOnClickListener {
-            val action = CacheDetailsDirections.actionCacheDetailsToMapFragment(args.geocache)
+            // Fetch all geocaches from the database to pass to the MapFragment
+            val databaseHelper = DatabaseHelper(requireContext())
+            val geocaches = databaseHelper.getAllGeocaches().toTypedArray()
+            val action = CacheDetailsDirections.actionCacheDetailsToMapFragment(geocaches)
             findNavController().navigate(action)
         }
 
@@ -58,7 +61,10 @@ class CacheDetails : Fragment(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         mapFragment.view?.setOnClickListener {
-            val action = CacheDetailsDirections.actionCacheDetailsToMapFragment(args.geocache)
+            // Fetch all geocaches from the database to pass to the MapFragment
+            val databaseHelper = DatabaseHelper(requireContext())
+            val geocaches = databaseHelper.getAllGeocaches().toTypedArray()
+            val action = CacheDetailsDirections.actionCacheDetailsToMapFragment(geocaches)
             findNavController().navigate(action)
         }
     }
@@ -78,11 +84,11 @@ class CacheDetails : Fragment(), OnMapReadyCallback {
                 mMap.addMarker(MarkerOptions().position(latLng).title(geocache.name))
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
             } else {
-                // *****
+                // ***
             }
         } catch (e: IOException) {
             e.printStackTrace()
-            // *****
+            // ***
         }
     }
 }

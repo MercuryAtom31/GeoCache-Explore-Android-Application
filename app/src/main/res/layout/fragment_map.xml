@@ -9,4 +9,12 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/button_back_to_landing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back_to_landing_page"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp" />
 </FrameLayout>
