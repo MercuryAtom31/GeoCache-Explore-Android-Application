@@ -32,7 +32,8 @@
             android:layout_height="wrap_content"
             android:text="@string/welcome_message"
             android:layout_weight="1"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:fontFamily="@font/roboto_font"/>
     </LinearLayout>
 
     <!-- Container for the clickable square for Cache List -->
@@ -65,7 +66,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/view_caches_list"
                 android:textSize="16sp"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/roboto_font"/>
 
         </LinearLayout>
     </FrameLayout>
